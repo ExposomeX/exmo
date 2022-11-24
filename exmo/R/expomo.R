@@ -1,5 +1,5 @@
 urlhead = 'http://www.exposomex.cn:8080/'
-
+library(gridExtra)
 
 #' @title  Initialize ExpoMultiomics module
 #' @description Initialize ExpoMultiomics analysis. It can generate an R6 class object 
