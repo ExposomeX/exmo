@@ -1,5 +1,5 @@
 urlhead = 'http://www.exposomex.cn:8080/'
-library(gridExtra)
+#library(gridExtra)
 
 #' @title  Initialize ExpoMultiomics module
 #' @description Initialize ExpoMultiomics analysis. It can generate an R6 class object 
@@ -15,6 +15,7 @@ library(gridExtra)
 #' @author Guohuan Zhang, Yuting Wang, Bin Wang (corresponding author)
 
 InitMO = function(){
+  library(gridExtra)
   url = paste0(urlhead,'InitMO')
   seednum = sample(1000, 1)
   res = httr::POST(url,
