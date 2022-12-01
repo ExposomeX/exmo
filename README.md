@@ -9,9 +9,9 @@ if (!requireNamespace("devtools", quietly = TRUE)){
 install.packages("devtools")
 }
 
-devtools::install_github('ExposomeX/excros/excros',force = TRUE)
+devtools::install_github('ExposomeX/exmo',force = TRUE)
 
-devtools::install_github('ExposomeX/extidy/extidy',force = TRUE)
+devtools::install_github('ExposomeX/extidy',force = TRUE)
 
 #"extidy" package is optional if the data file has been well prepared. However, the it is recommended as users may need tidy the data to meet the modeling requirement, such as deleting varaibles with low variance, transforming data type, classifying variable into several level, etc.
 
