@@ -59,6 +59,8 @@ res11 = MulOmicsCros(PID=res$PID,
                     Repeats = 5,
                     VarsImpThr = 0.85,
                     SG_Lrns ="lasso")
+                    
+                    
 res12 = VizMulOmicCros(PID=res$PID,
                    OutPath = "default",
                    VarsY = "Y1",
