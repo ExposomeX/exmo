@@ -72,7 +72,7 @@ res10 = TransDummy(PID=res$PID, Vars="default")
 
 4. Build MultiOmics model
 
-This MultiOmics function is the most critical in the exmo package. You can select one or more arbitrary learning methods in parameter SG_Lrns. Here we
+`MultiOmics` function is the most critical in the exmo package. You can select one or more arbitrary learning methods in parameter SG_Lrns. Here we
 choose lasso(least absolute shrinkage and selection operator) and rf(random forest) as examples. The calculation time depends on the characteristics of your data, the number of learning methods, and the tuning method. For parameter TuneMethod, the default option can provide faster calculations but less accurate results than other autotune methods. If you want to train a better model, choose other auto-tune method and increase the number of tuning times. Please attention, PID must be got from the return result of `InitMO`. 
 ```
 res11 = MulOmicsCros(PID=res$PID,
@@ -92,7 +92,7 @@ res11 = MulOmicsCros(PID=res$PID,
 
 5. Visualize MultiOmics model
 
-VizMulOmicCros function is mainly aimed to visualize the modeling results calculated by `MulOmicsCros` function. It can provide plots with high quality of the final results to make it easier for users to understand. You can get different styles of images by selecting different parameters.  Please attention, PID must be got from the return result of `InitMO`. 
+`VizMulOmicCros` function is mainly aimed to visualize the modeling results calculated by `MulOmicsCros` function. It can provide plots with high quality of the final results to make it easier for users to understand. You can get different styles of images by selecting different parameters.  Please attention, PID must be got from the return result of `InitMO`. 
 ```                    
 res12 = VizMulOmicCros(PID=res$PID,
                    OutPath = "default",
