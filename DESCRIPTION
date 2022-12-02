@@ -1,18 +1,19 @@
 Package: exmo
 Title: Integrate the multi-omic data to predict the incidence of diseases.
 Version: 1.0.0
-Authors@R: 
+Authors@R:
     c(
     person(given='Guohuan',
     family = 'Zhang',
-    role= c('aut')),
+    role = c('aut','cre'),
+    email = 'granhamzhang@foxmail.com'),
     person(given='Yuting',
     family = 'Wang',
-    role= c('aut')),
-    person(given='bin',
+    role = 'aut'),
+    person(given='Bin',
     family = 'Wang',
-    role= c('cph','aut','cre'),
-    email = "binwang@pku.edu.cn")
+    role = c('aut','cph'),
+    email = 'binwang@pku.edu.cn')
     )
 Description: To integrate the multi-omic data to predict the incidence of diseases. 
     It mainly aims to construct various stacked generalization(SG) models to predict 
