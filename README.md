@@ -1,8 +1,9 @@
-#Author: Guohuan Zhang, Yuting Wang, Bin Wang (corresponding author)
+# exmeta: Exposome Meta Module
+## Author: Guohuan Zhang, Yuting Wang, Bin Wang (corresponding author)
 
-#Date: 2022-11-30
+## Date: 2022-11-30
 
-#The exmo package is designed to integrate the multi-omic data to predict the incidence of diseases. It mainly aims to construct various stacked generalization(SG) models to predict the probability of outcome incidence, as well as providing the statistical explanation. Please see the website (http://www.exposomex.cn/#/expomultiomics) for more information. 
+The exmo package is designed to integrate the multi-omic data to predict the incidence of diseases. It mainly aims to construct various stacked generalization(SG) models to predict the probability of outcome incidence, as well as providing the statistical explanation. Please see the website (http://www.exposomex.cn/#/expomultiomics) for more information. 
 
 Users can install the package using the following code:
 
@@ -13,7 +14,7 @@ if (!requireNamespace("devtools", quietly = TRUE)){
 
 	devtools::install_github('ExposomeX/exmo',force = TRUE)
  
- devtools::install_github('ExposomeX/extidy',force = TRUE)
+        devtools::install_github('ExposomeX/extidy',force = TRUE)
 }
 
 library(exmo)
@@ -25,17 +26,17 @@ library(extidy)
 
 
 
-Tips:
-1. Before using the package, a user defined physical output path (i.e., OutPath) is recommended. For example
+## Tips:
+    1. Before using the package, a user defined physical output path (i.e., OutPath) is recommended. For example
 ```
 OutPath = "D:/test" #The default path is the current working directory of R. Users can use this code to set the preferred path.
 ```
-2. For each step, the returned values can be named as users' like by following R language requirement.
+    2. For each step, the returned values can be named as users' like by following R language requirement.
 
-3. All the PID must be the same with the one provided by InitMO function, e.g., res$PID.
+    3. All the PID must be the same with the one provided by `InitMO` function, e.g., res$PID.
 
 
-Example codes:
+## Example codes:
 1. Initial MultiOmics module:
 
 ```
@@ -69,6 +70,9 @@ res10 = TransDummy(PID=res$PID, Vars="default")
 ```
 
 4. Build MultiOmics model
+
+This MultiOmics function is the most critical in the exmo package. You can select one or more arbitrary learning methods in parameter SG_Lrns. Here we
+choose lasso(least absolute shrinkage and selection operator) and rf(random forest) as examples. The calculation time depends on the characteristics of your data, the number of learning methods, and the tuning method. For parameter TuneMethod, the default option can provide faster calculations but less accurate results than other autotune methods. If you want to train a better model, choose other auto-tune method and increase the number of tuning times. Please attention, PID must be got from the return result of `InitMO`. 
 ```
 res11 = MulOmicsCros(PID=res$PID,
                     OutPath = "default",
@@ -82,10 +86,12 @@ res11 = MulOmicsCros(PID=res$PID,
                     Ratio = 0.67,
                     Repeats = 5,
                     VarsImpThr = 0.85,
-                    SG_Lrns ="lasso")
+                    SG_Lrns ="lasso,rf")
 ```
 
 5. Visualize MultiOmics model
+
+VizMulOmicCros function is mainly aimed to visualize the modeling results calculated by `MulOmicsCros` function. It can provide plots with high quality of the final results to make it easier for users to understand. You can get different styles of images by selecting different parameters.  Please attention, PID must be got from the return result of `InitMO`. 
 ```                    
 res12 = VizMulOmicCros(PID=res$PID,
                    OutPath = "default",
@@ -98,7 +104,8 @@ res12 = VizMulOmicCros(PID=res$PID,
 ```
 
 6. Exit
-After all the analysis is done, please run the "FuncExit()" function to delete the data uploaded to the server.
+
+After all the analysis is done, please run the `FuncExit()` function to delete the data uploaded to the server.
 ```
 FuncExit(PID = res$PID)
 ```
