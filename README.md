@@ -28,11 +28,11 @@ library(extidy)
 
 
 ### Tips:
-1. Before using the package, a user defined physical output path (i.e., OutPath) is recommended. For example
+1. Before using the package, a user defined physical output path (i.e. OutPath) is recommended. For example
 ```
 OutPath = "D:/test" #The default path is the current working directory of R. Users can use this code to set the preferred path.
 ```
-2. For each step, the returned values can be named as users' like by following R language requirement.
+2. For each step, the returned values can be named as users' favor by following R language requirement.
 
 3. All the PID must be the same with the one provided by `InitMO` function, e.g., res$PID.
 
