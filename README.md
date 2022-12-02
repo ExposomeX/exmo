@@ -4,7 +4,7 @@
 
 #The ExpoMultiomics module is designed to integrate the multi-omic data to predict the incidence of diseases. It mainly aims to construct various stacked generalization(SG) models to predict the probability of outcome incidence, as well as providing the statistical explanation. Please see the website (http://www.exposomex.cn/#/expomultiomics) for more information. Users can install the package using the following code:
 
-`if (!requireNamespace("devtools", quietly = TRUE)){
+  if(!requireNamespace("devtools", quietly = TRUE)){
 
 install.packages("devtools")
 
@@ -13,7 +13,7 @@ install.packages("devtools")
 devtools::install_github('ExposomeX/exmo',force = TRUE)
 
 devtools::install_github('ExposomeX/extidy',force = TRUE)
-`
+
 
 #"extidy" package is optional if the data file has been well prepared. However, the it is recommended as users may need tidy the data to meet the modeling requirement, such as deleting varaibles with low variance, transforming data type, classifying variable into several level, etc.
 
